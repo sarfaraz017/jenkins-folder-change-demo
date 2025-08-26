@@ -14,7 +14,6 @@ pipeline {
       }
       steps {
         script {
-          // ensure repo is unshallowed for diff
           sh 'if git rev-parse --is-shallow-repository >/dev/null 2>&1; then git fetch --unshallow || true; fi'
 
           def changed = sh(
